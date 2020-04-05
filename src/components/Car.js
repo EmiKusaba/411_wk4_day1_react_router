@@ -4,8 +4,16 @@ import cars from '../cars.json'
 // Container, Paper, Chip //
 
 const Car = (props) => {
+    const id = props.match.params.id;
+    const car = cars[id];
+    console.log(cars[id]);
     return (
-        <h1>A specific car</h1>
+        <div>
+            <h1>{car.Name}</h1>
+            <ul>
+                <li>Miles Per Gallon: {car.Miles_per_Gallon}</li>
+            </ul>
+        </div>
     )
 }
 

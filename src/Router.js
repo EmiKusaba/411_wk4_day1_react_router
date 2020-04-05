@@ -10,8 +10,32 @@ Remember to export the component at the end
 
 import React from 'react'
 import { Switch, Route } from 'react-router'
-// Write component imports here //
+import { Link } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Car from './components/Car';
 
+function Router() {
+    return (
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+            </ul>
 
+            <hr />
 
-// Start Router function here //
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/car/:id" component={Car} />
+            </Switch>
+        </div>
+    );
+}
+
+export default Router;
