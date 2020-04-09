@@ -10,9 +10,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         '& > *': {
-            margin: theme.spacing(1),
-            width: theme.spacing(16),
-            height: theme.spacing(16),
+            margin: theme.spacing(1),            
         },
     },
 }));
@@ -24,16 +22,16 @@ export const Car = (props) => {
     console.log(cars[id]);
     return (
         <div>
-            <Container fixed>
+            <Container fixed >
                 <Paper elevation={3} className={classes.card}>
                     <h1>{car.Name}</h1>
-                    <ul>
+                    <div>
                         {
                             Object.keys(car).map((key, i) => {
                                 return <Chip key={i} label={`${key}: ${car[key]}`} />
                             })
                         }
-                    </ul>
+                    </div>
                 </Paper>
             </Container>
         </div>
