@@ -17,9 +17,8 @@ const useStyles = makeStyles((theme) => ({
 
 export const Car = (props) => {
     const classes = useStyles();
-    const id = props.match.params.id;
-    const car = cars[id];
-    console.log(cars[id]);
+    const id = Number(props.match.params.id);
+    const car = cars.find((value) => value.id === id);
     return (
         <div>
             <Container fixed >
